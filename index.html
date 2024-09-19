@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SLUX Perfume</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@26..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="icon" href="static/css/img/brandlogo.png" />
+    <script src="static/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+  </head>
+  <body onload="showsite()">
+    <div id="target"></div>
+
+    <script id="template" type="text/template">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+          <div class="navbar-header">
+            <img src="static/css/img/brandlogo.png" alt="Slux Perfume" />
+            <a class="navbar-brand" href="#landingpage">{{brandName}}</a>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsiblenav"
+          >
+            <span
+              ><i><img src="static/css/img/menu.png" alt="" width="35px" /></i
+            ></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="collapsiblenav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link m-3" href="#landingpage">{{home}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link m-3" href="#collection">{{collection}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link m-3" href="#showcase">{{showcase}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link m-3" href="#testimonial">{{testimonials}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link m-3" href="#contact">{{contact}}</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="icon-container">
+            <i class="p-2"
+              ><span class="material-symbols-rounded"> {{search}} </span></i
+            >
+            <i class="p-2"
+              ><span class="material-symbols-rounded shopping-cart" data-count="0">
+                {{cart}}
+              </span></i
+            >
+            <i class="p-2"
+              ><span class="material-symbols-rounded"> {{person}} </span></i
+            >
+          </div>
+        </nav>
+
+        <!---------------LANDING/HOME PAGE--------------->
+        <div id="landingpage">
+            <div class="container-fluid bg-1 text-center">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="landingpage-content">
+                    <h1 class="playfair-display-intro">{{intro}}</h1>
+                    <p class="p-4 justify-content-center">{{introContent}}</p>
+                    <a href="#showcase">
+                      <button class="cta">
+                        <span class="hover-underline-animation">{{buy}} </span>
+                        <svg
+                          id="arrow-horizontal"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="10"
+                          viewBox="0 0 46 16"
+                        >
+                          <path
+                            id="Path_10"
+                            data-name="Path 10"
+                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                            transform="translate(30)"
+                          ></path>
+                        </svg>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="home-img">
+                    <img
+                      src="static/css/img/slux-bg-1.png"
+                      alt="chanel-display"
+                      class="img-fluid display"
+                    />
+                    <img src="static/css/img/shape1.png" alt="" class="img-fluid shape1" />
+                    <img src="static/css/img/shape2.png" alt="" class="img-fluid shape2" />
+                    <img src="static/css/img/shape3.png" alt="" class="img-fluid shape3" />
+                    <img src="static/css/img/shape4.png" alt="" class="img-fluid shape4" />
+                    <img src="static/css/img/shape5.png" alt="" class="img-fluid shape5" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!---------------COLLECTION PAGE--------------->
+          <div id="collection">
+            <div class="container-fluid bg-2">
+              <div
+                id="carouselSlide"
+                class="carousel slide reveal active"
+                data-ride="carousel"
+              >
+                <ol class="carousel-indicators">
+                  <li
+                    data-target="#carouselSlide"
+                    data-slide-to="0"
+                    class="active"
+                  ></li>
+                  <li data-target="#carouselSlide" data-slide-to="1"></li>
+                  <li data-target="#carouselSlide" data-slide-to="2"></li>
+                  <li data-target="#carouselSlide" dataslide-to="3"></li>
+                  <li data-target="#carouselSlide" dataslide-to="4"></li>
+                  <li data-target="#carouselSlide" dataslide-to="5"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      class="d-block w-100"
+                      src="static/css/img/logo.png"
+                      alt="First slide"
+                      id="img"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <a href="#chanel"><button class="text-uppercase" id="prod">{{view}}</button></a>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="static/css/img/bvlgari.png"
+                      alt="Second slide"
+                      id="img"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <a href="#bvlgari"><button class="text-uppercase" id="prod">{{view}}</button></a>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="static/css/img/dior.png"
+                      alt="Third slide"
+                      id="img"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <a href="#dior"><button class="text-uppercase" id="prod">{{view}}</button></a>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="static/css/img/gucci.png"
+                      alt="Fourth slide"
+                      id="img"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <a href="#gucci"><button class="text-uppercase" id="prod">{{view}}</button></a>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="static/css/img/dgp.png"
+                      alt="Fifth slide"
+                      id="img"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <a href="#dolce"><button class="text-uppercase" id="prod">{{view}}</button></a>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="static/css/img/vsp.png"
+                      alt="Fifth slide"
+                      id="img"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <a href="#victorias-secret"><button class="text-uppercase" id="prod">{{view}}</button></a>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  class="carousel-control-prev"
+                  href="#carouselSlide"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">{{Previous}}</span>
+                </a>
+                <a
+                  class="carousel-control-next"
+                  href="#carouselSlide"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">{{Next}}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!---------------SHOWCASE PAGE--------------->
+          <div class="container-fluid bg-3" id="showcase">
+            <div class="container reveal active">
+              <div id="chanel">
+                <div class="row justify-content-center">
+                  <div class="col-lg-7">
+                    <div class="brand">
+                      <h1 class="text-uppercase roboto-regular">{{chanel}}</h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <!---Product Start-->
+                  <div class="col-lg-3">
+                    <div class="product-item">
+                      <div class="product-img">
+                        <img
+                          src="static/css/img/cristalle.png"
+                          alt=""
+                          class="img-fluid p-4 item-prod"
+                        />
+                      </div>
+                      <div class="product-content">
+                        <div class="text-center p-4 product-price">
+                          <span>{{ch1price}}</span>
+                        </div>
+                        <h5 class="text-uppercase text-center product-name01">
+                          {{ch1name}}
+                        </h5>
+                        <p class="text-center">{{ch1desc}}</p>
+                      </div>
+                      <span class="span"></span>
+                      <button class="cartBtn">
+                        <svg
+                          class="cart"
+                          fill="white"
+                          viewBox="0 0 576 512"
+                          height="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                          ></path>
+                        </svg>
+                        {{add}}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="1em"
+                          viewBox="0 0 640 512"
+                          class="product"
+                        >
+                          <path
+                            d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <!---Product End-->
+                  <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/coco.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{ch2price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{ch2name}}
+                      </h5>
+                      <p class="text-center">{{ch2desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/egoiste.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{ch3price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{ch3name}}
+                      </h5>
+                      <p class="text-center">{{ch3desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/bleu.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{ch4price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{ch4name}}
+                      </h5>
+                      <p class="text-center">{{ch4desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+              </div>
+            </div>
+          </div>
+
+          <div class="container reveal active">
+            <div id="bvlgari">
+              <div class="row justify-content-center">
+                <div class="col-lg-7">
+                  <div class="brand">
+                    <h1 class="text-uppercase baskervville-sc-regular">{{bvlgari}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/allegra.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{b1price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name01">
+                        {{b1name}}
+                      </h5>
+                      <p class="text-center">{{b1desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/omnia.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{b2price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{b2name}}
+                      </h5>
+                      <p class="text-center">{{b2desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/tygar.png"
+                        alt="Tygar Perfume"
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{b3price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{b3name}}
+                      </h5>
+                      <p class="text-center">{{b3desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/man.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{b4price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{b4name}}
+                      </h5>
+                      <p class="text-center">{{b4desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+              </div>
+            </div>
+          </div>
+
+          <div class="container reveal active">
+            <div id="dior">
+              <div class="row justify-content-center">
+                <div class="col-lg-7">
+                  <div class="brand">
+                    <h1 class="text-uppercase playfair-display">{{dior}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/miss-dior.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{d1price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name01">
+                        {{d1name}}
+                      </h5>
+                      <p class="text-center">{{d1desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/jadore.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{d2price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{d2name}}
+                      </h5>
+                      <p class="text-center">{{d2desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/sauvage.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{d3price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{d3name}}
+                      </h5>
+                      <p class="text-center">{{d3desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/fahrenheit.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{d4price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{d4name}}
+                      </h5>
+                      <p class="text-center">{{d4desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+              </div>
+            </div>
+          </div>
+
+          <div class="container reveal active">
+            <div id="gucci">
+              <div class="row justify-content-center">
+                <div class="col-lg-7">
+                  <div class="brand">
+                    <h1 class="text-uppercase montserrat-gucci">{{gucci}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/bloom.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{g1price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name01">
+                        {{g1name}}
+                      </h5>
+                      <p class="text-center">{{g1desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/flora.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{g2price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{g2name}}
+                      </h5>
+                      <p class="text-center">{{g2desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/elixir.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{g3price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{g3name}}
+                      </h5>
+                      <p class="text-center">{{g3desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/essence.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{g4price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{g4name}}
+                      </h5>
+                      <p class="text-center">{{g4desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+              </div>
+            </div>
+          </div>
+
+          <div class="container reveal active">
+            <div id="dolce">
+              <div class="row justify-content-center">
+                <div class="col-lg-7">
+                  <div class="brand">
+                    <h1 class="text-uppercase jost-dg">
+                      {{dolce}} <span class="and">{{and}}</span> {{gabbana}}
+                    </h1>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/the-only-one.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{dg1price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name01">
+                        {{dg1name}}
+                      </h5>
+                      <p class="text-center">{{dg1desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/devotion.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{dg2price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{dg2name}}
+                      </h5>
+                      <p class="text-center">{{dg2desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!---Product End-->
+                <!---Product Start-->
+                <div class="col-lg-3">
+                  <div class="product-item">
+                    <div class="product-img">
+                      <img
+                        src="static/css/img/k.png"
+                        alt=""
+                        class="img-fluid p-4 item-prod"
+                      />
+                    </div>
+                    <div class="product-content">
+                      <div class="text-center p-4 product-price">
+                        <span>{{dg3price}}</span>
+                      </div>
+                      <h5 class="text-uppercase text-center product-name02">
+                        {{dg3name}}
+                      </h5>
+                      <p class="text-center">{{dg3desc}}</p>
+                    </div>
+                    <span class="span"></span>
+                    <button class="cartBtn">
+                      <svg
+                        class="cart"
+                        fill="white"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                      {{add}}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 640 512"
+                        class="product"
+                      >
+                        <path
+                          d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-item">
+                      <div class="product-img">
+                        <img
+                          src="static/css/img/the-one-for-men.png"
+                          alt=""
+                          class="img-fluid p-4 item-prod"
+                        />
+                      </div>
+                      <div class="product-content">
+                        <div class="text-center p-4 product-price">
+                          <span>{{dg4price}}</span>
+                        </div>
+                        <h5 class="text-uppercase text-center product-name02">
+                         {{dg4name}}
+                        </h5>
+                        <p class="text-center">{{dg4desc}}</p>
+                      </div>
+                      <span class="span"></span>
+                      <button class="cartBtn">
+                        <svg
+                          class="cart"
+                          fill="white"
+                          viewBox="0 0 576 512"
+                          height="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                          ></path>
+                        </svg>
+                        {{add}}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="1em"
+                          viewBox="0 0 640 512"
+                          class="product"
+                        >
+                          <path
+                            d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container reveal active">
+                <div id="victorias-secret">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                      <div class="brand">
+                        <h1 class="text-uppercase cormorant-garamond-light">
+                          {{v}}<span class="small">{{title}}</span> {{s}}<span class="small"
+                            >{{title1}}</span
+                          >
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <!---Product Start-->
+                    <div class="col-lg-3">
+                      <div class="product-item">
+                        <div class="product-img">
+                          <img
+                            src="static/css/img/bare.png"
+                            alt=""
+                            class="img-fluid p-4 item-prod"
+                          />
+                        </div>
+                        <div class="product-content">
+                          <div class="text-center p-4 product-price">
+                            <span>{{vsprice}}</span>
+                          </div>
+                          <h5 class="text-uppercase text-center product-name01">
+                            {{vs1name}}
+                          </h5>
+                          <p class="text-center">{{vs1desc}}</p>
+                        </div>
+                        <span class="span"></span>
+                        <button class="cartBtn">
+                          <svg
+                            class="cart"
+                            fill="white"
+                            viewBox="0 0 576 512"
+                            height="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                            ></path>
+                          </svg>
+                          {{add}}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 640 512"
+                            class="product"
+                          >
+                            <path
+                              d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <!---Product End-->
+                    <!---Product Start-->
+                    <div class="col-lg-3">
+                      <div class="product-item">
+                        <div class="product-img">
+                          <img
+                            src="static/css/img/bombshell.png"
+                            alt=""
+                            class="img-fluid p-4 item-prod"
+                          />
+                        </div>
+                        <div class="product-content">
+                          <div class="text-center p-4 product-price">
+                            <span>{{vsprice}}</span>
+                          </div>
+                          <h5 class="text-uppercase text-center product-name02">
+                            {{vs2name}}
+                          </h5>
+                          <p class="text-center">{{vs2desc}}</p>
+                        </div>
+                        <span class="span"></span>
+                        <button class="cartBtn">
+                          <svg
+                            class="cart"
+                            fill="white"
+                            viewBox="0 0 576 512"
+                            height="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                            ></path>
+                          </svg>
+                          {{add}}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 640 512"
+                            class="product"
+                          >
+                            <path
+                              d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <!---Product End-->
+                    <!---Product Start-->
+                    <div class="col-lg-3">
+                      <div class="product-item">
+                        <div class="product-img">
+                          <img
+                            src="static/css/img/tease.png"
+                            alt=""
+                            class="img-fluid p-4 item-prod"
+                          />
+                        </div>
+                        <div class="product-content">
+                          <div class="text-center p-4 product-price">
+                            <span>{{vsprice}}</span>
+                          </div>
+                          <h5 class="text-uppercase text-center product-name02">
+                            {{vs3name}}
+                          </h5>
+                          <p class="text-center">{{vs3desc}}</p>
+                        </div>
+                        <span class="span"></span>
+                        <button class="cartBtn">
+                          <svg
+                            class="cart"
+                            fill="white"
+                            viewBox="0 0 576 512"
+                            height="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                            ></path>
+                          </svg>
+                          {{add}}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 640 512"
+                            class="product"
+                          >
+                            <path
+                              d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <!---Product End-->
+                    <!---Product Start-->
+                    <div class="col-lg-3">
+                      <div class="product-item">
+                        <div class="product-img">
+                          <img
+                            src="static/css/img/him.png"
+                            alt=""
+                            class="img-fluid p-4 item-prod"
+                          />
+                        </div>
+                        <div class="product-content">
+                          <div class="text-center p-4 product-price">
+                            <span>{{vsprice}}</span>
+                          </div>
+                          <h5 class="text-uppercase text-center product-name02">
+                            {{vs4name}}
+                          </h5>
+                          <p class="text-center">{{vs4desc}}</p>
+                        </div>
+                        <span class="span"></span>
+                        <button class="cartBtn">
+                          <svg
+                            class="cart"
+                            fill="white"
+                            viewBox="0 0 576 512"
+                            height="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                            ></path>
+                          </svg>
+                          ADD TO CART
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 640 512"
+                            class="product"
+                          >
+                            <path
+                              d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <!---Product End-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!---------------TESTIMONIAL PAGE--------------->
+            <div id="testimonial" class="container-fluid bg-4 reveal active">
+                <div class="owl-carousel owl-theme testimonial-container">
+                  <!---TESTIMONIAL 1 START-->
+                  <div class="item">
+                    <main class="testimonial-card">
+                      <div class="quote">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <h2 class="pl-3"><i>{{highlight1}}</i></h2>
+                      </div>
+                      <p class="text-justify pl-3">{{lorem}}</p>
+                      <div class="ratings">
+                        <i
+                          ><span class="material-symbols-outlined"> {{rate}} </span></i
+                        >
+                        <i
+                          ><span class="material-symbols-outlined"> {{rate}} </span></i
+                        >
+                        <i
+                          ><span class="material-symbols-outlined"> {{rate}} </span></i
+                        >
+                        <i
+                          ><span class="material-symbols-outlined"> {{rate}} </span></i
+                        >
+                        <i
+                          ><span class="material-symbols-outlined">
+                            {{halfrate}}
+                          </span></i
+                        >
+                      </div>
+                    </main>
+                    <div class="profile">
+                      <div class="img-fluid profile-img">
+                        <img src="static/css/img/sid.jfif" alt="" />
+                      </div>
+                      <div class="profile-desc">
+                        <span class="name">{{testimony1}}</span><br />
+                        <span class="description">{{Description}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!---TESTIMONIAL 1 END-->
+
+                  <!---TESTIMONIAL 2 START-->
+              <div class="item">
+                <main class="testimonial-card">
+                  <div class="quote">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h2 class="pl-3"><i>{{highlight2}}</i></h2>
+                  </div>
+                  <p class="text-justify pl-3">{{lorem}}</p>
+                  <div class="ratings">
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                  </div>
+                </main>
+                <div class="profile">
+                  <div class="img-fluid profile-img">
+                    <img src="static/css/img/drose.jfif" alt="" />
+                  </div>
+                  <div class="profile-desc">
+                    <span class="name">{{testimony2}}</span><br />
+                    <span class="description">{{Description}}</span>
+                  </div>
+                </div>
+              </div>
+              <!---TESTIMONIAL 2 END-->
+
+              <!---TESTIMONIAL 3 START-->
+              <div class="item">
+                <main class="testimonial-card">
+                  <div class="quote">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h2 class="pl-3"><i>{{highlight3}}</i></h2>
+                  </div>
+                  <p class="text-justify pl-3">{{lorem}}</p>
+                  <div class="ratings">
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                  </div>
+                </main>
+                <div class="profile">
+                  <div class="img-fluid profile-img">
+                    <img src="static/css/img/mark.jfif" alt="" />
+                  </div>
+                  <div class="profile-desc">
+                    <span class="name">{{testimony3}}</span><br />
+                    <span class="description">{{Description}}</span>
+                  </div>
+                </div>
+              </div>
+              <!---TESTIMONIAL 3 END-->
+
+              <!---TESTIMONIAL 4 START-->
+              <div class="item">
+                <main class="testimonial-card">
+                  <div class="quote">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h2 class="pl-3"><i>{{highlight4}}</i></h2>
+                  </div>
+                  <p class="text-justify pl-3">{{lorem}}</p>
+                  <div class="ratings">
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined">
+                        {{halfrate}}
+                      </span></i
+                    >
+                    <i
+                      ><span
+                        class="material-symbols-outlined"
+                        style="font-variation-settings: 'fill' 0"
+                      >
+                        {{rate}}
+                      </span></i
+                    >
+                  </div>
+                </main>
+                <div class="profile">
+                  <div class="img-fluid profile-img">
+                    <img src="static/css/img/jl.jfif" alt="" />
+                  </div>
+                  <div class="profile-desc">
+                    <span class="name">{{testimony4}}</span><br />
+                    <span class="description">{{Description}}</span>
+                  </div>
+                </div>
+              </div>
+              <!---TESTIMONIAL 4 END-->
+              <!---TESTIMONIAL 5 START-->
+              <div class="item">
+                <main class="testimonial-card">
+                  <div class="quote">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h2 class="pl-3"><i>{{highlight5}}</i> 🤩</h2>
+                  </div>
+                  <p class="text-justify pl-3">{{lorem}}</p>
+                  <div class="ratings">
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span
+                        class="material-symbols-outlined"
+                        style="font-variation-settings: 'fill' 0"
+                      >
+                        {{rate}}
+                      </span></i
+                    >
+                  </div>
+                </main>
+                <div class="profile">
+                  <div class="img-fluid profile-img">
+                    <img src="static/css/img/nicole.jfif" alt="" />
+                  </div>
+                  <div class="profile-desc">
+                    <span class="name">{{testimony5}}</span><br>
+                    <span class="description">{{Description}}</span>
+                  </div>
+                </div>
+              </div>
+              <!---TESTIMONIAL 5 END-->
+              <!---TESTIMONIAL 6 START-->
+              <div class="item">
+                <main class="testimonial-card">
+                  <div class="quote">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h2 class="pl-3"><i>{{highlight6}}</i></h2>
+                  </div>
+                  <p class="text-justify pl-3">{{lorem}}</p>
+                  <div class="ratings">
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                    <i
+                      ><span class="material-symbols-outlined"> {{rate}} </span></i
+                    >
+                  </div>
+                </main>
+                <div class="profile">
+                  <div class="img-fluid profile-img">
+                    <img src="static/css/img/darylle.jfif" alt="" />
+                  </div>
+                  <div class="profile-desc">
+                    <span class="name">{{testimony6}}</span><br>
+                    <span class="description">{{Description}}</span>
+                  </div>
+                </div>
+              </div>
+              <!---TESTIMONIAL 6 END-->
+            </div>
+          </div>
+
+          <!---------------CONTACT PAGE--------------->
+          <div id="contact" class="container-fluid bg-5">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm">
+                  <img
+                    src="static/css/img/slux.png"
+                    alt=""
+                    class="img-fluid brand reveal active"
+                  />
+                </div>
+
+                <div class="col-sm-8">
+                  <form action="" class="contact-form reveal actve">
+                    <h1 class="text-center message">{{contactTitle}}</h1>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Your Name"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Your Email"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Subject"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <textarea
+                            class="form-control"
+                            placeholder="Message"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <button type="submit" class="submit">
+                            <div class="svg-wrapper-1">
+                              <div class="svg-wrapper">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  width="20"
+                                  height="20"
+                                >
+                                  <path fill="none" d="M0 0h24v24H0z"></path>
+                                  <path
+                                    fill="currentColor"
+                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                            <span>{{Send}}</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="col-sm contact">
+                  <div class="contact-item reveal active">
+                    <div class="icon">
+                      <img
+                        src="static/css/img/fb.png"
+                        alt=""
+                        class="img-fluid socmed"
+                      />
+                    </div>
+                    <p>{{fbInfo}}</p>
+                  </div>
+
+                  <div class="contact-item reveal active">
+                    <div class="icon">
+                      <img
+                        src="static/css/img/x.png"
+                        alt=""
+                        class="img-fluid socmed"
+                      />
+                    </div>
+                    <p>{{xInfo}}</p>
+                  </div>
+
+                  <div class="contact-item reveal active">
+                    <div class="icon">
+                      <img
+                        src="static/css/img/ig.png"
+                        alt=""
+                        class="img-fluid socmed"
+                      />
+                    </div>
+                    <p>{{igInfo}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!---------------FOOTER--------------->
+          <footer class="container-fluid text-center">
+            {{slux}}<br />
+             <i>{{end}}</i>
+           </footer>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="static/js/mustache.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="static/js/animations.js"></script>
+  </body>
+</html>
